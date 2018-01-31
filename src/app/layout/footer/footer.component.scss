@@ -1,0 +1,16 @@
+.footer {
+  background: white;
+}
+#sister ul {
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+#sister li {
+  display: flex;
+  height: 30px;
+  margin: 5px 1rem 0 0;
+}
+#sister img {
+  height: 30px;
+}

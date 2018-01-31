@@ -1,0 +1,17 @@
+.header-image {
+  background-position: top;
+  background-size: cover;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.29),rgba(0, 0, 0, 0.59)),url('https://images.unsplash.com/photo-1454329030972-00583f5f051f?dpr=2&auto=format&fit=crop&w=1500&h=1011&q=80&cs=tinysrgb&crop=') ;
+}
+.is-outlined {
+  background-color:transparent;
+  color:#fff;
+  border-color: #fff;
+}
+.is-outlined:hover {
+  background-color:#fff;
+  color:#212121;
+}
+header {
+  padding: 3rem;
+}

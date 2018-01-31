@@ -1,0 +1,52 @@
+<section class="hero is-danger is-medium header-image">
+  <div class="hero-body">
+    <div class="container has-text-centered">
+      <h1 class="title is-1">
+        Book yall's reservation
+      </h1>
+      <h2 class="subtitle">
+        Subtitle
+      </h2>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <p class="has-text-centered">Reservation Form goes here.</p>
+  <div class="columns content is-centered">
+    <form class="column is-half form" novalidate (submit)="onSubmit()" [formGroup]="form">
+      <div class="field">
+        <label class="label">Name</label>
+        <div class="control">
+          <input class="input" type="text" placeholder="Your full name" name="bookingName" formControlName="name">
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="label">Email</label>
+        <div class="control">
+          <!--is-danger when invalid -->
+          <input class="input" type="email" placeholder="Enter a valid email" name="bookingEmail" formControlName="email" email>
+        </div>
+        <!--<p class="help is-danger">This email is invalid</p>-->
+      </div>
+
+      <app-file-uploader (fileUploadSuccess)="onFileUploadSuccess($event)"></app-file-uploader>
+
+      <div class="field">
+        <app-date-picker
+          formControlName="reservationDate" [parent]="form"
+          [dayModifier]="dayModifier"
+          [viewDate]="viewDate"
+          (dayClicked)="dayClicked($event.day)">
+        </app-date-picker>
+      </div>
+
+      <div class="field" style="margin: 1em 0">
+        <div class="control">
+          <button class="button is-primary" [disabled]="!form.valid" *ngIf="pageType !== enum_PageType.ViewPage">Submit</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</section>
